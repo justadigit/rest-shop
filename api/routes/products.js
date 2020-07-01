@@ -8,20 +8,7 @@ router.get('/',(req,res)=>{
     .sort({createdAt:-1})
     .select('_id title price')
     .then(data=>{
-        res.status(200).json({
-            count:data.length,
-            products: data.map(product=>{
-                return {
-                    title:product.title,
-                    price:product.price,
-                    _id:product._id,
-                    request:{
-                        type:'GET',
-                        url:'http://localhost:6000/products/'+product._id
-                    }
-                }
-            })
-        });
+       res.status(200).json(data);
     })
     .catch(err=>{
         res.json(err);

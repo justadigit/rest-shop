@@ -5,7 +5,7 @@ const orderRouter = require('./api/routes/orders');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const port = process.env.PORT || 6000;
+const port = process.env.PORT || 6100;
 
 //middleware
 app.use(morgan('dev'))
